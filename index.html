@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HER KUTUYA TIKLANDIĞINDA ARKA PLAN RENGİ DEĞİŞSİN</title>
+</head>
+<body>
+    
+    <style>
+        body{
+            background-color: gray;
+           justify-content: center;
+           align-items: center;
+           display: flex;
+           min-height: 100vh;   
+        }
+
+.container{
+    width: 100%;
+    text-align: center;
+}
+        
+   
+        .box{
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            margin: 1rem 1rem;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+
+        .box:first-child{
+            background-color: red;
+        }
+
+       .box:nth-child(2){
+           background-color: hotpink;
+       }
+
+       .box:nth-child(3){
+           background-color: orange;
+       }
+
+
+        .box:last-child{
+            background-color: yellow;
+        }
+
+    </style>
+
+     <div class="container">
+         <div class="boxArea">
+             <div class="box" id="box1"></div>
+             <div class="box" id="box2"></div>
+             <div class="box" id="box3"></div>
+             <div class="box" id="box4"></div>
+
+         </div>
+     </div>
+
+
+     <script>
+         let btns = document.querySelectorAll(".box");
+         let body = document.querySelector("body");
+ 
+         //btns lerin her birine btn dedim
+         btns.forEach(function(btn){
+             btn.addEventListener("click", change);//her birine tıklayınca changeColor functionu çalışacak
+           
+                                //olay
+                 function change(event){
+                     //olay hedeflenirse(click olursa) id si box1 olana
+                     if(event.target.id == "box1"){
+                            body.style.backgroundColor= "red";
+                    }
+
+                    else if(event.target.id == "box2"){
+                        body.style.backgroundColor= "hotpink";
+
+                    }
+
+                    else if(event.target.id == "box3"){
+                        body.style.backgroundColor= "orange";
+
+                    }
+
+                    else if(event.target.id == "box4"){
+                        body.style.backgroundColor= "yellow";
+
+                    }
+                  
+                
+                 }
+
+            })
+         
+
+
+
+     </script>
+     
+
+</body>
+</html>
